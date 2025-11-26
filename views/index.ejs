@@ -3,18 +3,25 @@
     <title><%=title%></title>
   </head>
   <body>
+    <% if (messages.length === 0) { %>
+    <h1 style="color: red">No messages found</h1>
+
+    <% } else { %>
+    <h1 style="color: green">Messages</h1>
+
     <% messages.forEach((message) => { %>
     <div>
       <p style="display: inline-block">
-        <%= message.user %>, on <%= message.added %> said: <%= message.text %>
+        <%= message.id %>- <%= message.username %>, on <%= message.date %> said:
+        <%= message.message %>
       </p>
       <a href="/index/<%= message.id %>">
         <button>Open</button>
       </a>
     </div>
-    <% }) %>
+    <% }) } %>
 
-    <a href="/new" style="display: block; margin-top: 2em"
+    <a href="/new-message" style="display: block; margin-top: 2em"
       ><button style="padding: 0.5em 1em">Go to form</button></a
     >
   </body>

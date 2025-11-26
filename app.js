@@ -21,7 +21,7 @@ app.use(express.static(assetsPath));
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
-app.use("/new", newMessageRouter);
+app.use("/new-message", newMessageRouter);
 
 app.get("/{*splat}", (req, res) => {
   res.status(404).send("<h1 style='color: red'>404 - PAGE NOT FOUND</h1>");
