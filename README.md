@@ -12,3 +12,4 @@ A very simple full-stack message board application built with:
 - View single message details
 - Add new messages
 - Persistent storage using a Postgres database
+- Backend form validation with express-validator
