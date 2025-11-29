@@ -3,6 +3,14 @@
     <title>Message Form</title>
   </head>
   <body>
+    <% if (errors && errors.length > 0) { %>
+    <ul style="color: red">
+      <% errors.forEach(err => { %>
+      <li><%= err.msg %></li>
+      <% }); %>
+    </ul>
+    <% } %>
+
     <h1>Submit a Message</h1>
 
     <form method="POST" action="/new-message">

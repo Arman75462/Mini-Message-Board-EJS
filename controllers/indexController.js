@@ -11,5 +11,15 @@ export async function getMessageDetails(req, res) {
 
   const messageDetails = await getSingleMessageDetails(id);
 
-  res.render("messageDetails", { messageDetails: messageDetails });
+  if (!messageDetails) {
+    return res.render("messageDetails", {
+      messageDetails: null,
+      notFound: true,
+    });
+  }
+
+  res.render("messageDetails", {
+    messageDetails: messageDetails,
+    notFound: false,
+  });
 }
